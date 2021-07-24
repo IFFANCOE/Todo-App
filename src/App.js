@@ -37,7 +37,6 @@ const App = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (todoInput !== "") {
-
       //- update data is array to todos
       setTodos([
         ...todos,
@@ -72,31 +71,31 @@ const App = () => {
     // text is text not variable
     setCurrentTodo({ ...currentTodo, text: e.target.value })
     console.log("Current Todo: ", currentTodo);
-  } 
+  }
   //! F update
   // user push button Update Todo not update but will be todo update this function
-  const handleUpdateTodo = (id , updatedTodo) => {
+  const handleUpdateTodo = (id, updatedTodo) => {
     // store data update and update state Todos
-    const updatedItem = todos.map((todo)=>{
+    const updatedItem = todos.map((todo) => {
       // updatedTodo is new todo
       return todo.id === id ? updatedTodo : todo;
     })
-     // after user push update then set this
+    // after user push update then set this
     setIsEditing(false)
     setTodos(updatedItem)
   }
   //! F submit form when click update
-  const handleEditFormSubmit= (e) =>{
+  const handleEditFormSubmit = (e) => {
     e.preventDefault()
     // call F
-    handleUpdateTodo(currentTodo.id,currentTodo)
+    handleUpdateTodo(currentTodo.id, currentTodo)
   }
- 
+
   //-----------------------------------------------------------------------------------------------
 
   console.log(todos);
   return (
-    <div className="App" > 
+    <div className="App" >
       <h1>Todo App</h1>
 
       {/* when user edit  */}
@@ -124,7 +123,7 @@ const App = () => {
             value={todoInput}
             onChange={handleInputChange} // see console.log is  j , jo ,joh , john
           />
-          <button type="submit">Add</button>
+          <button className="btnAdd">Add</button>
         </form>
       )}
       {/*  output todo */}
@@ -132,10 +131,11 @@ const App = () => {
         {/* render map todos state */}
         {todos.map((todoMap) => (
           <li key={todoMap.id}>
-            {todoMap.text}
-            {" "}
-            <button onClick={() => handleEditClick(todoMap)} >Edit</button>
-            <button onClick={() => handelDeleteClick(todoMap.id)}>Delete</button>
+              {todoMap.text}
+              {" "}
+              <button className="btnEdit" onClick={() => handleEditClick(todoMap)} >Edit</button>
+              <button className="btnDelete" onClick={() => handelDeleteClick(todoMap.id)}>Delete</button>
+            
           </li>
         ))}
       </ul>

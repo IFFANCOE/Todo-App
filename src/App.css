@@ -1,7 +1,43 @@
-*{
-  outline: 1px solid red;
+* {
+  /* outline: 1px solid red; */
 }
 
 .App {
   text-align: center;
+}
+
+li {
+  list-style: none;
+  border: 1px solid;
+  box-shadow: 5px 2px 5px rgb(0, 0, 0);
+  margin-top: 2%;
+}
+
+
+.btnDelete {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid;
+  transition: all .2s ease;
+}
+.btnDelete:hover{
+  background-color: rgb(255, 79, 79);
+  color: white;
+}
+.btnEdit {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid;
+  transition: all .2s ease;
+}
+.btnEdit:hover{
+  background-color: rgb(52, 255, 52);
+  color: white;
+}
+.btnAdd {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid;
+  transition: all .2s ease;
+}
+.btnAdd:hover{
+  background-color: rgb(17, 227, 255);
+  color: white;
 }
